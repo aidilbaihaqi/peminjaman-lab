@@ -11,7 +11,7 @@ Aplikasi Peminjaman Laboratorium berbasis website yang dibangun dengan Laravel 1
 - Admin dapat mengedit status pengembalian data laboratorium 
 
 # Entitas 
-- USERS (id,nama,username,email,password,no_telp,jenis_kelamin,level)
+- USERS (id,nama,email,password,no_telp,jenis_kelamin,level)
 - LABORATORIUM (id,nama,status)
 - PEMINJAMAN (id,lab_id,user_id,tgl_pinjam,tgl_kembali,status_peminjaman,status_pengembalian)
 
