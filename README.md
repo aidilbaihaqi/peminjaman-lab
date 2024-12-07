@@ -3,6 +3,10 @@
 ## Tentang Website
 Aplikasi Peminjaman Laboratorium berbasis website yang dibangun dengan Laravel 11 dan TailwindCSS. Terdapat multi authentication yaitu user dan admin dengan permission dan view yang berbeda. Aplikasi ini dikerjakan oleh Aidil Baihaqi dan Rivandi Ismanto sebagai pemenuhan tugas akhir mata kuliah Analisis dan Perancangan Perangkat Lunak
 
+## Fitur
+- Email Notification
+  Ketika admin mengubah persetujuan peminjaman laboratorium menjadi "disetujui" maka masuk sebuah pesan otomatis dari sistem ke email pengguna bahwa peminjaman disetujui
+
 ## Privilege User
 - User dapat meminjam laboratorium yang tersedia
 - User dapat melihat status persetujuan peminjaman laboratorium
