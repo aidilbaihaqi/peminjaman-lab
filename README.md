@@ -6,7 +6,9 @@ Aplikasi Peminjaman Laboratorium berbasis website yang dibangun dengan Laravel 1
 ## Fitur
 - Email Notification
 ```bash
-  Ketika admin mengubah persetujuan peminjaman laboratorium menjadi "disetujui" maka masuk sebuah pesan otomatis dari sistem ke email pengguna bahwa peminjaman disetujui
+  Ketika admin mengubah persetujuan peminjaman laboratorium menjadi "disetujui", 
+  maka masuk sebuah pesan otomatis dari sistem 
+  ke email pengguna bahwa peminjaman disetujui
 ```
 
 ## Privilege User
