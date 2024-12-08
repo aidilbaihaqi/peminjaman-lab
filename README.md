@@ -1,7 +1,7 @@
 # Aplikasi Website Peminjaman Laboratorium
 
 ## Tentang Website
-Aplikasi Peminjaman Laboratorium berbasis website yang dibangun dengan Laravel 11 Filament. Terdapat multi authentication yaitu user dan admin dengan permission dan view yang berbeda. Aplikasi ini dikerjakan oleh Aidil Baihaqi dan Rivandi Ismanto sebagai pemenuhan tugas akhir mata kuliah Analisis dan Perancangan Perangkat Lunak
+Aplikasi Peminjaman Laboratorium berbasis website yang dibangun dengan Laravel 11. Terdapat multi authentication yaitu user dan admin dengan permission dan view yang berbeda. Aplikasi ini dikerjakan oleh Aidil Baihaqi dan Rivandi Ismanto sebagai pemenuhan tugas akhir mata kuliah Analisis dan Perancangan Perangkat Lunak
 
 ## Fitur
 - Email Notification
