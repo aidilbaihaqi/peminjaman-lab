@@ -25,6 +25,15 @@ Aplikasi Peminjaman Laboratorium berbasis website yang dibangun dengan Laravel 1
 - LABORATORIUM (id,nama,status)
 - PEMINJAMAN (id,lab_id,user_id,tgl_pinjam,tgl_kembali,status_peminjaman,status_pengembalian)
 
+## Progress Pembuatan Tugas Akhir
+- ERD (Rivandi & Aidil)
+- DFD (Rivandi)
+- Prototype atau Wireframe Design (Aidil)
+- Blackbox Testing (Rivandi)
+- UAT Kuesioner (Fajri)
+- Aplikasi (Aidil & Rivandi)
+- Laporan Akhir yang meliputi keseluruhan poin diatas (Fajri)
+
 ## Jobdesc [Aidil](https://github.com/aidilbaihaqi)
 - Tambah template dashboard bootstrap ke view
 - Buat view admin: dashboard,user,laboratorium,peminjaman
