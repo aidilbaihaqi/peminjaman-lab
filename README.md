@@ -26,8 +26,9 @@ Aplikasi Peminjaman Laboratorium berbasis website yang dibangun dengan Laravel 1
 - PEMINJAMAN (id,lab_id,user_id,tgl_pinjam,tgl_kembali,status_peminjaman,status_pengembalian)
 
 ## Jobdesc [Aidil](https://github.com/aidilbaihaqi)
-- Perbaiki autentikasi register di breeze
-- Tambah template dashboard tailwindcss ke view
+- Tambah template dashboard bootstrap ke view
+- Buat view admin: dashboard,user,laboratorium,peminjaman
+- Buat view user: dashboard->status peminjaman
 
 ## Jobdesc [Rivandi](https://github.com/Schartz0)
 - Buat CRUD laboratorium (backend)
