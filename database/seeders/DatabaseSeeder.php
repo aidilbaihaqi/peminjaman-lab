@@ -16,6 +16,7 @@ class DatabaseSeeder extends Seeder
     {
         // Admin
         User::create([
+            'nim' => '00000000',
             'nama' => 'Kang Admin',
             'no_telp' => '08123456789',
             'jenis_kelamin' => 'L',
@@ -24,8 +25,9 @@ class DatabaseSeeder extends Seeder
             'level' => 'admin'
         ]);
 
-        // Admin
+        // User
         User::create([
+            'nim' => '2301020006',
             'nama' => 'Aidil Baihaqi',
             'no_telp' => '081268335349',
             'jenis_kelamin' => 'L',

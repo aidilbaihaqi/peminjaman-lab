@@ -2,11 +2,18 @@
     <form method="POST" action="{{ route('register') }}">
         @csrf
 
-        <!-- Name -->
+        <!-- NIM -->
         <div>
-            <x-input-label for="name" :value="__('Name')" />
-            <x-text-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" />
-            <x-input-error :messages="$errors->get('name')" class="mt-2" />
+            <x-input-label for="nanimma" :value="__('NIM')" />
+            <x-text-input id="nim" class="block mt-1 w-full" type="text" name="nim" :value="old('nim')" required autofocus autocomplete="nim" />
+            <x-input-error :messages="$errors->get('nim')" class="mt-2" />
+        </div>
+
+        <!-- Nama -->
+        <div>
+            <x-input-label for="nama" :value="__('Nama')" />
+            <x-text-input id="nama" class="block mt-1 w-full" type="text" name="nama" :value="old('nama')" required autofocus autocomplete="nama" />
+            <x-input-error :messages="$errors->get('nama')" class="mt-2" />
         </div>
 
         <!-- Email Address -->
@@ -37,6 +44,24 @@
                             name="password_confirmation" required autocomplete="new-password" />
 
             <x-input-error :messages="$errors->get('password_confirmation')" class="mt-2" />
+        </div>
+
+        <!-- Nomor Telpon -->
+        <div>
+            <x-input-label for="no_telp" :value="__('Nomor Telepon (Contoh: 08123456789)')" />
+            <x-text-input id="no_telp" class="block mt-1 w-full" type="text" name="no_telp" :value="old('no_telp')" required autofocus autocomplete="no_telp" />
+            <x-input-error :messages="$errors->get('no_telp')" class="mt-2" />
+        </div>
+
+        <!-- Jenis Kelamin -->
+        <div>
+            <x-input-label for="jenis_kelamin" :value="__('Jenis Kelamin')" />
+            <select id="jenis_kelamin" name="jenis_kelamin" class="block mt-1 w-full border-gray-300 rounded-md shadow-sm focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
+                <option value="" disabled selected>Pilih jenis kelamin</option>
+                <option value="L">Laki-laki</option>
+                <option value="P">Perempuan</option>
+            </select>
+            <x-input-error :messages="$errors->get('jenis_kelamin')" class="mt-2" />
         </div>
 
         <div class="flex items-center justify-end mt-4">
