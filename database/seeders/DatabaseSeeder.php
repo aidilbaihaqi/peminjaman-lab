@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Laboratorium;
 use App\Models\User;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
@@ -34,6 +35,12 @@ class DatabaseSeeder extends Seeder
             'email' => 'abaihaqi@ngobarengaidil.com',
             'password' => Hash::make('aidil123'),
             'level' => 'user'
+        ]);
+
+        // Data Laboratorium
+        Laboratorium::create([
+            'nama' => 'Laboratorium Informatika',
+            'status' => 1
         ]);
     }
 }

@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\LaboratoriumController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -7,9 +9,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/admin/dashboard', function() {
-    return view('admin.dashboard');
-});
+Route::get('/admin/dashboard', [DashboardController::class, 'index'])->name('admin.dashboard');
+Route::get('/admin/data-laboratorium', [LaboratoriumController::class, 'index'])->name('laboratorium.index');
+Route::get('/admin/tambah-laboratorium', [LaboratoriumController::class, 'create'])->name('laboratorium.create');
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');

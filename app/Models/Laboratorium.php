@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Relations\HasOne;
 
 class Laboratorium extends Model
 {
+    protected $table = 'laboratorium';
     protected $guarded = ['id'];
 
     public function peminjamans(): HasMany
