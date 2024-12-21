@@ -23,9 +23,8 @@
     <div class="card-body">
       <h4 class="card-title">Form Edit Data</h4>
       <p class="card-description"> Pastikan anda memasuki inputan dengan benar </p>
-      <form class="forms-sample" method="POST" action="">
+      <form class="forms-sample" method="POST" action="{{ route('laboratorium.update',$laboratorium->id) }}">
         @csrf
-        @method('PUT')
         <div class="form-group">
           <label for="nama">Nama Laboratorium</label>
           <input 

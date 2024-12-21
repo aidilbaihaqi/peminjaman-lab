@@ -15,6 +15,7 @@ Route::get('/admin/data-laboratorium', [LaboratoriumController::class, 'index'])
 Route::get('/admin/tambah-laboratorium', [LaboratoriumController::class, 'create'])->name('laboratorium.create');
 Route::post('/admin/tambah-laboratorium', [LaboratoriumController::class, 'store'])->name('laboratorium.store');
 Route::get('/admin/edit-laboratorium/{id}', [LaboratoriumController::class, 'edit'])->name('laboratorium.edit');
+Route::post('/admin/edit-laboratorium/{id}', [LaboratoriumController::class, 'update'])->name('laboratorium.update');
 Route::get('/admin/hapus-laboratorium/{id}', [LaboratoriumController::class, 'destroy'])->name('laboratorium.destroy');
 
 

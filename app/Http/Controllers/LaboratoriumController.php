@@ -32,6 +32,8 @@ class LaboratoriumController extends Controller
             ]);
             return redirect()->route('laboratorium.index')->with(['success'=>'Data berhasil ditambah!']);
         }
+        return redirect()->route('laboratorium.index')->with(['error'=>'Data gagal ditambah!']);
+
     }
     public function edit($id)
     {
@@ -39,6 +41,25 @@ class LaboratoriumController extends Controller
         return view('admin.laboratorium.edit',[
             'laboratorium' =>$laboratorium
         ]);
+    }
+    public function update(Request $request, $id)
+    {
+        $laboratorium = Laboratorium::findOrFail($id);
+        $validation = $request->validate([
+            'nama' => 'required|max:30',
+            'status'=>'required|boolean'
+        ]);
+        
+        if($validation){
+            $laboratorium->update([
+                'nama' => $request->nama,
+                'status' => $request->status
+            ]);
+            return redirect()->route('laboratorium.index')->with(['success'=>'Data berhasil diubah!']);
+        }
+        return redirect()->route('laboratorium.index')->with(['error'=>'Data gagal diubah!']);
+
+
     }
     public function destroy($id)
     {
