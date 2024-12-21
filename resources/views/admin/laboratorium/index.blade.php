@@ -17,6 +17,18 @@
       </div>
     </div>
   </div>
+  @if (session('success'))
+    <div class="alert alert-success">
+        {{ session('success') }}
+    </div>
+  @endif
+
+  @if (session('error'))
+    <div class="alert alert-danger">
+        {{ session('error') }}
+    </div>
+  @endif
+
   <!-- Page Title Header Ends-->
   <div class="card">
     <div class="card-body">
@@ -41,8 +53,8 @@
               <td>{{ $d->nama }}</td>
               <td><a class="btn-sm btn-{{ $d->status ? 'success':'danger' }} btn-rounded">{{ $d->status ? 'Tersedia':'Tidak Tersedia' }}</a></td>
               <td>
-                <a href="" class="btn-sm btn-info btn-rounded">Edit</a>
-                <a href="" class="btn-sm btn-danger btn-rounded">Delete</a>
+                <a href="{{ route('laboratorium.edit',$d->id) }}" class="btn-sm btn-info btn-rounded">Edit</a>
+                <a href="{{ route('laboratorium.destroy',$d->id) }}" class="btn-sm btn-danger btn-rounded">Delete</a>
               </td>
             @endforeach
           </tbody>

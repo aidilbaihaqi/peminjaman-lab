@@ -23,7 +23,8 @@
     <div class="card-body">
       <h4 class="card-title">Form Tambah Data</h4>
       <p class="card-description"> Pastikan anda memasuki inputan dengan benar </p>
-      <form class="forms-sample">
+      <form class="forms-sample" method="POST" action="{{ route('laboratorium.store') }}">
+        @CSRF
         <div class="form-group">
           <label for="nama">Nama Laboratorium</label>
           <input type="text" class="form-control" id="nama" name="nama" placeholder="Nama Laboratorium">
