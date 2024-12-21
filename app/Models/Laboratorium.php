@@ -3,13 +3,15 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 
 class Laboratorium extends Model
 {
     protected $guarded = ['id'];
 
-    public function peminjaman(): HasOne {
-        return $this->hasOne(Peminjaman::class);
+    public function peminjamans(): HasMany
+    {
+        return $this->hasMany(Peminjaman::class, 'lab_id','id');
     }
 }

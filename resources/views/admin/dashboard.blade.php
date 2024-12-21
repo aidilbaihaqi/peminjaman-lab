@@ -66,7 +66,7 @@
           </div>
           <div class="d-flex py-2 border-bottom">
             <div class="wrapper">
-              <small class="text-muted">Dec 8, 2024  - Dec 12, 2024</small>
+              <small class="text-muted">Dec 8, 2024 - Dec 12, 2024</small>
               <h6 class="font-weight-semibold text-gray mb-1">Fajri Hasan</h6>
               <p class="font-sm text-gray">MTLTN-LAB-1</p>
             </div>
@@ -74,7 +74,7 @@
           </div>
           <div class="d-flex py-2 border-bottom">
             <div class="wrapper">
-              <small class="text-muted">Dec 8, 2024  - Dec 12, 2024</small>
+              <small class="text-muted">Dec 8, 2024 - Dec 12, 2024</small>
               <h6 class="font-weight-semibold text-gray mb-1">Aidil Baihaqi</h6>
               <p class="font-sm text-gray">MTLTN-LAB-1</p>
             </div>
