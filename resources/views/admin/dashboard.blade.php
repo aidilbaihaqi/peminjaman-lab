@@ -59,7 +59,7 @@
             @foreach ($data_peminjaman as $dp)
               <div class="wrapper">
                 <small class="text-muted">{{ \Carbon\Carbon::parse($dp->tgl_pinjam)->format('d M Y') }} - {{ \Carbon\Carbon::parse($dp->kembali)->format('d M Y') }}</small>
-                <h6 class="font-weight-semibold text-gray mb-1">Dummy User</h6>
+                <h6 class="font-weight-semibold text-gray mb-1">{{ $dp->user->nama }}</h6>
                 <p class="font-sm text-gray">Lab ID: {{ $dp->lab_id }}</p>
                 <p class="font-sm text-gray">{{ $dp->lab->nama }}</p>
               </div>
