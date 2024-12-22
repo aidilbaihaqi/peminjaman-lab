@@ -35,11 +35,11 @@ Aplikasi Peminjaman Laboratorium berbasis website yang dibangun dengan Laravel 1
 - Laporan Akhir yang meliputi keseluruhan poin diatas (Fajri)
 
 ## Jobdesc [Aidil](https://github.com/aidilbaihaqi)
-- Buat view user: dashboard->ajukan peminjaman & status peminjaman
 - Buat view admin: peminjaman
 - Multi user
 - Update store function untuk current user (user auth)
 - Fitur notifikasi
+- Perbaiki fitur edit delete peminjaman
 - Testing
 
 ## Jobdesc [Rivandi](https://github.com/Schartz0)
