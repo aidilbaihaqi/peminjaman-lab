@@ -57,6 +57,9 @@
                     <label for="password" class="col-sm-3 col-form-label">Password</label>
                     <input type="password" class="form-control" id="password" name="password" placeholder="Masukkan password">
                   </div>
+                  <div class="form-group">
+                    <p>Belum punya akun? Segera daftar pada <a href="{{ route('register.index') }}">halaman registrasi</a></p>
+                  </div>
                   <button type="submit" class="btn btn-success mr-2">Login</button>
                   <button class="btn btn-light">Cancel</button>
                 </form>
