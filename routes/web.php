@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\LaboratoriumController;
 use App\Http\Controllers\PeminjamanController;
@@ -7,6 +8,10 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\UserController;
 use App\Models\Laboratorium;
 use Illuminate\Support\Facades\Route;
+
+Route::get('/',[AuthController::class,'login'])->name('login.index');
+Route::get('/register',[AuthController::class,'register'])->name('register.index');
+Route::post('/register',[AuthController::class,'create'])->name('register.create');
 
 // Admin Privilege
 // Dashboard
