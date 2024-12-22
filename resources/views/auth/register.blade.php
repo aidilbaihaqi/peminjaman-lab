@@ -77,12 +77,13 @@
                     <label for="password" class="col-sm-3 col-form-label">Password</label>
                     <input type="password" class="form-control" id="password" name="password" placeholder="Masukkan password">
                   </div>
-                  <div class="form-group">
-                    <p>Sudah punya akun? Segera masuk pada <a href="{{ route('login.index') }}">halaman login</a></p>
-                  </div>
+                  
                   <button type="submit" class="btn btn-success mr-2">Daftar</button>
                   <button class="btn btn-light">Cancel</button>
                 </form>
+                <div class="form-group">
+                  <p>Sudah punya akun? Segera masuk pada <a href="{{ route('login.index') }}">halaman login</a></p>
+                </div>
               </div>
             </div>
           </div>
