@@ -20,12 +20,6 @@
         <span class="menu-title">Peminjaman</span>
       </a>
     </li>
-    <li class="nav-item">
-      <a class="nav-link" href="">
-        <i class="menu-icon typcn typcn-document-text"></i>
-        <span class="menu-title">Data User</span>
-      </a>
-    </li>
     @endif
   </ul>
 </nav>
