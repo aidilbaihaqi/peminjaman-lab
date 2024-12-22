@@ -49,13 +49,15 @@
           </thead>
           <tbody>
             @foreach ($data as $d)
-              <td>{{ $d->id }}</td>
-              <td>{{ $d->nama }}</td>
-              <td><a class="btn-sm btn-{{ $d->status ? 'success':'danger' }} btn-rounded">{{ $d->status ? 'Tersedia':'Tidak Tersedia' }}</a></td>
-              <td>
-                <a href="{{ route('laboratorium.edit',$d->id) }}" class="btn-sm btn-info btn-rounded">Edit</a>
-                <a href="{{ route('laboratorium.destroy',$d->id) }}" class="btn-sm btn-danger btn-rounded">Delete</a>
-              </td>
+              <tr>
+                <td>{{ $d->id }}</td>
+                <td>{{ $d->nama }}</td>
+                <td><a class="btn-sm btn-{{ $d->status ? 'success':'danger' }} btn-rounded">{{ $d->status ? 'Tersedia':'Tidak Tersedia' }}</a></td>
+                <td>
+                  <a href="{{ route('laboratorium.edit',$d->id) }}" class="btn-sm btn-info btn-rounded">Edit</a>
+                  <a href="{{ route('laboratorium.destroy',$d->id) }}" class="btn-sm btn-danger btn-rounded">Delete</a>
+                </td>
+              </tr>
             @endforeach
           </tbody>
         </table>
