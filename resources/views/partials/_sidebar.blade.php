@@ -1,6 +1,7 @@
 <nav class="sidebar sidebar-offcanvas" id="sidebar">
   <ul class="nav">
     <li class="nav-item nav-category">Main Menu</li>
+    @if(auth()->user()->level == 'admin')
     <li class="nav-item">
       <a class="nav-link" href="{{ route('admin.dashboard') }}">
         <i class="menu-icon typcn typcn-document-text"></i>
@@ -25,5 +26,6 @@
         <span class="menu-title">Data User</span>
       </a>
     </li>
+    @endif
   </ul>
 </nav>

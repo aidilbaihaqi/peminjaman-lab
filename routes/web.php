@@ -13,6 +13,7 @@ Route::get('/',[AuthController::class,'login'])->name('login.index');
 Route::post('/',[AuthController::class,'authenticate'])->name('login.authenticate');
 Route::get('/register',[AuthController::class,'register'])->name('register.index');
 Route::post('/register',[AuthController::class,'create'])->name('register.create');
+Route::post('/logout', [AuthController::class,'logout'])->name('logout');
 
 Route::prefix('admin')->middleware(['auth','admin'])->group(function() {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('admin.dashboard');
@@ -34,15 +35,13 @@ Route::prefix('admin')->middleware(['auth','admin'])->group(function() {
         Route::post('/edit-peminjaman/{id}', 'update')->name('peminjaman.update');
         Route::get('/hapus-peminjaman/{id}', 'destroy')->name('peminjaman.destroy');
     });
-
-    Route::post('/logout', [AuthController::class,'logout'])->name('logout');
 });
 
 Route::middleware(['auth','user'])->group(function() {
     Route::controller(UserController::class)->group(function() {
         Route::get('/user','index')->name('user.index');
+        Route::post('/user','pinjam')->name('user.pinjam');
     });
-    Route::post('/logout', [AuthController::class,'logout'])->name('logout');
 });
 
 

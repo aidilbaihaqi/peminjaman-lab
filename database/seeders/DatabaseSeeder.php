@@ -41,15 +41,7 @@ class DatabaseSeeder extends Seeder
         // Data Laboratorium
         Laboratorium::create([
             'nama' => 'Laboratorium Informatika',
-            'status' => 0
+            'status' => 1
         ]);
-
-        // Data Peminjaman
-        Peminjaman::create([
-            'lab_id' => 1,
-            'user_id' => 1,
-            'tgl_pinjam' => '2024-12-24',
-            'tgl_kembali' => '2024-12-30'
-        ]); 
     }
 }

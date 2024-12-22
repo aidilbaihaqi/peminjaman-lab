@@ -11,7 +11,7 @@
   <div class="row page-title-header">
     <div class="col-12">
       <div class="page-header">
-        <h3 class="page-title">Selamat Datang, (nama user)</h3>
+        <h3 class="page-title">Selamat Datang, {{ auth()->user()->nama }}</h3>
         <nav aria-label="breadcrumb">
           <ol class="breadcrumb">
               <li class="breadcrumb-item active" aria-current="page">Dashboard</li>
@@ -20,17 +20,40 @@
       </div>
     </div>
   </div>
+
+  @if (session('success'))
+      <div class="alert alert-success">
+          {{ session('success') }}
+      </div>
+  @endif
+
+  @if ($errors->any())
+      <div class="alert alert-danger">
+          <ul>
+              @foreach ($errors->all() as $error)
+                  <li>{{ $error }}</li>
+              @endforeach
+          </ul>
+      </div>
+  @endif
+
   <!-- Page Title Header Ends-->
   <div class="row">
     <div class="col-md-4 grid-margin stretch-card">
       <div class="card">
         <div class="card-body">
           <h4 class="mb-2">Data User</h4>
-          <p class="card-text mb-1"><strong>NIM:</strong> 123456789</p>
-          <p class="card-text mb-1"><strong>Nama:</strong> Aidil Baihaqi</p>
-          <p class="card-text mb-1"><strong>No Telepon:</strong> 08123456789</p>
-          <p class="card-text mb-1"><strong>Jenis Kelamin:</strong> Laki-laki</p>
-          <p class="card-text"><strong>Email:</strong> kangadmin@example.com</p>
+          <p class="card-text mb-1"><strong>NIM:</strong> {{ auth()->user()->nim }}</p>
+          <p class="card-text mb-1"><strong>Nama:</strong> {{ auth()->user()->nama }}</p>
+          <p class="card-text mb-1"><strong>No Telepon:</strong> {{ auth()->user()->no_telp }}</p>
+          <p class="card-text mb-1"><strong>Jenis Kelamin:</strong> 
+          @if (auth()->user()->jenis_kelamin == 'L')
+            Laki-laki
+          @else
+            Perempuan
+          @endif
+          </p>
+          <p class="card-text"><strong>Email:</strong> {{ auth()->user()->email }}</p>
         </div>
       </div>
     </div>
@@ -54,7 +77,7 @@
                 </tr>
               </thead>
               <tbody>
-                @foreach ($data as $d)
+                @forelse ($data as $d)
                   <tr>
                     <td>{{ $d->lab_id }}</td>
                     <td>{{ $d->user->nama }}</td>
@@ -77,7 +100,11 @@
                       @endif
                     </td>
                   </tr>
-                @endforeach
+                @empty
+                <div class="alert alert-secondary">
+                  Anda belum melakukan peminjaman apapun.
+                </div>
+                @endforelse
               </tbody>
             </table>
           </div>
@@ -90,7 +117,7 @@
       <div class="card">
         <div class="card-body">
             <h5 class="mb-2">Form Peminjaman Laboratorium</h5>
-            <form action="" method="POST">
+            <form action="{{ route('user.pinjam') }}" method="POST">
               @csrf
                 <!-- Input Tanggal Pinjam -->
                 <div class="mb-3">
