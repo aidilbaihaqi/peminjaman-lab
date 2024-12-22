@@ -4,12 +4,14 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\LaboratoriumController;
 use App\Http\Controllers\PeminjamanController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\UserController;
 use App\Models\Laboratorium;
 use Illuminate\Support\Facades\Route;
 
 // Dashboard
 Route::get('/admin/dashboard', [DashboardController::class, 'index'])->name('admin.dashboard');
 
+// Admin Privilege
 // Laboratorium
 Route::controller(LaboratoriumController::class)->group(function() {
     Route::get('/admin/data-laboratorium', 'index')->name('laboratorium.index');
@@ -19,7 +21,6 @@ Route::controller(LaboratoriumController::class)->group(function() {
     Route::post('/admin/edit-laboratorium/{id}', 'update')->name('laboratorium.update');
     Route::get('/admin/hapus-laboratorium/{id}', 'destroy')->name('laboratorium.destroy');
 }); 
-
 // Peminjaman
 Route::controller(PeminjamanController::class)->group(function() {
     Route::get('/admin/data-peminjaman', 'index')->name('peminjaman.index');
@@ -30,6 +31,10 @@ Route::controller(PeminjamanController::class)->group(function() {
     Route::get('/admin/hapus-peminjaman/{id}', 'destroy')->name('peminjaman.destroy');
 });
 
+// User Privilege
+Route::controller(UserController::class)->group(function() {
+    Route::get('/user','index')->name('user.index');
+});
 
 Route::get('/dashboard', function () {
     return view('dashboard');

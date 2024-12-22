@@ -41,7 +41,7 @@
                     <td>{{ $dl->id }}</td>
                     <td>{{ $dl->nama }}</td>
                     <td>
-                      <a class="btn-sm btn-{{ $dl->status ? 'success' : 'danger' }} text-white btn-rounded">{{ $dl->status ? 'Tersedia' : 'Tidak Tersedia' }}</a>
+                      <a class="btn btn-sm btn-{{ $dl->status ? 'success' : 'danger' }} btn-rounded">{{ $dl->status ? 'Tersedia' : 'Tidak Tersedia' }}</a>
                     </td>
                   </tr>
                 @endforeach
