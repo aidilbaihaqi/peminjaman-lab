@@ -23,7 +23,7 @@
         <div class="card-body">
           <div class="d-flex justify-content-between">
             <h4 class="card-title mb-0">Data Laboratorium</h4>
-            <a href="#"><small>Show All</small></a>
+            <a href="{{ route('laboratorium.index') }}"><small>Show All</small></a>
           </div>
           <p>Berikut adalah beberapa data laboratorim yang tercatat.</p>
           <div class="table-responsive">
@@ -36,21 +36,15 @@
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <td>MTLTN-LAB-1</td>
-                  <td>Laboratorium Teknik Informatika A1</td>
-                  <td><div class="btn-sm btn-success btn-rounded">Tersedia</div></td>
-                </tr>
-                <tr>
-                  <td>MTLTN-LAB-2</td>
-                  <td>Laboratorium Teknik Informatika B1</td>
-                  <td><div class="btn-sm btn-danger btn-rounded" >Tidak Tersedia</div></td>
-                </tr>
-                <tr>
-                  <td>MTLTN-LAB-3</td>
-                  <td>Laboratorium Teknik Informatika C1</td>
-                  <td><div class="btn-sm btn-danger btn-rounded" >Tidak Tersedia</div></td>
-                </tr>
+                @foreach ($data_lab as $dl)
+                  <tr>
+                    <td>{{ $dl->id }}</td>
+                    <td>{{ $dl->nama }}</td>
+                    <td>
+                      <a class="btn-sm btn-{{ $dl->status ? 'success' : 'danger' }} text-white btn-rounded">{{ $dl->status ? 'Tersedia' : 'Tidak Tersedia' }}</a>
+                    </td>
+                  </tr>
+                @endforeach
               </tbody>
             </table>
           </div>
@@ -62,30 +56,16 @@
         <div class="card-body">
           <h4 class="card-title mb-0">Peminjaman Terbaru</h4>
           <div class="d-flex py-2 border-bottom">
-            <div class="wrapper">
-              <small class="text-muted">Dec 8, 2024  - Dec 12, 2024</small>
-              <h6 class="font-weight-semibold text-gray mb-1">Rivandi Ismanto</h6>
-              <p class="font-sm text-gray">MTLTN-LAB-1</p>
-            </div>
-            <small class="text-muted ml-auto">Show</small>
+            @foreach ($data_peminjaman as $dp)
+              <div class="wrapper">
+                <small class="text-muted">{{ \Carbon\Carbon::parse($dp->tgl_pinjam)->format('d M Y') }} - {{ \Carbon\Carbon::parse($dp->kembali)->format('d M Y') }}</small>
+                <h6 class="font-weight-semibold text-gray mb-1">Dummy User</h6>
+                <p class="font-sm text-gray">Lab ID: {{ $dp->lab_id }}</p>
+                <p class="font-sm text-gray">{{ $dp->lab->nama }}</p>
+              </div>
+            @endforeach
           </div>
-          <div class="d-flex py-2 border-bottom">
-            <div class="wrapper">
-              <small class="text-muted">Dec 8, 2024 - Dec 12, 2024</small>
-              <h6 class="font-weight-semibold text-gray mb-1">Fajri Hasan</h6>
-              <p class="font-sm text-gray">MTLTN-LAB-1</p>
-            </div>
-            <small class="text-muted ml-auto">Show</small>
-          </div>
-          <div class="d-flex py-2 border-bottom">
-            <div class="wrapper">
-              <small class="text-muted">Dec 8, 2024 - Dec 12, 2024</small>
-              <h6 class="font-weight-semibold text-gray mb-1">Aidil Baihaqi</h6>
-              <p class="font-sm text-gray">MTLTN-LAB-1</p>
-            </div>
-            <small class="text-muted ml-auto">Show</small>
-          </div>
-          <a class="d-block mt-3" href="#">Show all</a>
+          <a class="d-block mt-3" href="{{ route('peminjaman.index') }}">Show all</a>
         </div>
       </div>
     </div>

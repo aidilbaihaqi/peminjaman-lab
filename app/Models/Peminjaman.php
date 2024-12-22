@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Peminjaman extends Model
 {
+    protected $table = 'peminjaman';
     protected $guarded = ['id'];
 
     public function laboratorium(): BelongsTo {

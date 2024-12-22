@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\Laboratorium;
+use App\Models\Peminjaman;
 use App\Models\User;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
@@ -40,7 +41,15 @@ class DatabaseSeeder extends Seeder
         // Data Laboratorium
         Laboratorium::create([
             'nama' => 'Laboratorium Informatika',
-            'status' => 1
+            'status' => 0
         ]);
+
+        // Data Peminjaman
+        Peminjaman::create([
+            'lab_id' => 1,
+            'user_id' => 1,
+            'tgl_pinjam' => '2024-12-24',
+            'tgl_kembali' => '2024-12-30'
+        ]); 
     }
 }
