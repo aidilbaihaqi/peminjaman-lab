@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 
 class AuthController extends Controller
@@ -33,5 +34,36 @@ class AuthController extends Controller
         ]);
 
         return redirect()->route('login.index')->with(['success' => 'Registrasi berhasil! Anda dapat melakukan login.']);
+    }
+    public function login()
+    {
+        return view('auth.login');
+    }
+    public function authenticate(Request $request)
+    {
+        $request->validate([
+            'email' => 'required|email',
+            'password' => 'required|min:8'
+        ]);
+
+        $user = User::where('email', $request->email)->first();
+        if($user && Hash::check($request->password, $user->password)) {
+            Auth::login($user);
+
+            if($user->level === 'admin') {
+                return redirect()->route('admin.dashboard')->with(['success'=>'Anda berhasil login']);
+            }
+            return redirect()->route('user.index')->with(['success'=>'Anda berhasil login']);
+        }
+        return redirect()->route('login.index')->with(['error'=>'Kesalahan login! Harap periksa email dan password anda kembali.']);
+    }
+    public function logout(Request $request) 
+    {
+        Auth::logout();
+
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+
+        return redirect()->route('login.index')->with(['success'=>'Anda berhasil logout!']);
     }
 }

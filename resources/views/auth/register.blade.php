@@ -29,6 +29,23 @@
           <div class="row w-100">
             <div class="col-lg-4 mx-auto">
               <h2 class="text-center mb-4">Register</h2>
+              
+              @if (session('success'))
+                  <div class="alert alert-success">
+                      {{ session('success') }}
+                  </div>
+              @endif
+
+              @if ($errors->any())
+                  <div class="alert alert-danger">
+                      <ul>
+                          @foreach ($errors->all() as $error)
+                              <li>{{ $error }}</li>
+                          @endforeach
+                      </ul>
+                  </div>
+              @endif
+
               <div class="auto-form-wrapper">
                 <form action="{{ route('register.create') }}" method="POST" class="forms-sample mb-3">
                   @csrf

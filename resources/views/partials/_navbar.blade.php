@@ -95,10 +95,13 @@
         <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="UserDropdown">
           <div class="dropdown-header text-center">
             <img class="img-md rounded-circle" src="{{ asset('img/profile.png') }}" alt="Profile image">
-            <p class="mb-1 mt-3 font-weight-semibold">Allen Moreno</p>
-            <p class="font-weight-light text-muted mb-0">allenmoreno@gmail.com</p>
+            <p class="mb-1 mt-3 font-weight-semibold">{{ auth()->user()->nama }}</p>
+            <p class="font-weight-light text-muted mb-0">{{ auth()->user()->email }}</p>
           </div>
-          <a class="dropdown-item">Sign Out<i class="dropdown-item-icon ti-power-off"></i></a>
+          <form action="{{ route('logout') }}" method="post">
+            @csrf
+            <button type="submit" class="dropdown-item">Sign Out<i class="dropdown-item-icon ti-power-off"></i></button>
+          </form>
         </div>
       </li>
     </ul>
