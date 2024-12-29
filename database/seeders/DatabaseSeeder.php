@@ -43,5 +43,13 @@ class DatabaseSeeder extends Seeder
             'nama' => 'Laboratorium Informatika',
             'status' => 1
         ]);
+        Laboratorium::create([
+            'nama' => 'Laboratorium Elektro',
+            'status' => 1
+        ]);
+        Laboratorium::create([
+            'nama' => 'Laboratorium Perkapalan',
+            'status' => 1
+        ]);
     }
 }
