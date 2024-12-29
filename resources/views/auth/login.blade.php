@@ -49,7 +49,7 @@
               <div class="auto-form-wrapper">
                 <form action="{{ route('login.authenticate') }}" method="POST" class="forms-sample mb-3">
                   @csrf
-                  <h3>Login</h3>
+                  <h5>Sign In</h5>
                   <div class="form-group row">
                     <label for="email" class="col-sm-3 col-form-label">Email</label>
                     <input type="email" class="form-control" id="email" name="email" placeholder="Masukkan email">
