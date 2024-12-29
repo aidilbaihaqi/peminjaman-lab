@@ -49,7 +49,7 @@
               <div class="auto-form-wrapper">
                 <form action="{{ route('register.create') }}" method="POST" class="forms-sample mb-3">
                   @csrf
-                  <h5>Sign Up</h5>
+                  <h4>Sign Up</h4>
                   <div class="form-group row">
                     <label for="nim">NIM</label>
                     <input type="text" class="form-control" id="nim" name="nim" placeholder="Masukkan NIM">
