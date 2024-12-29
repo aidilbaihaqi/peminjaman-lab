@@ -28,7 +28,7 @@
         <div class="content-wrapper d-flex align-items-center auth register-bg-1 theme-one">
           <div class="row w-100">
             <div class="col-lg-4 mx-auto">
-              <h2 class="text-center mb-4">Register</h2>
+              <h2 class="text-center mb-4">Aplikasi Peminjaman Laboratorium</h2>
               
               @if (session('success'))
                   <div class="alert alert-success">
@@ -49,6 +49,7 @@
               <div class="auto-form-wrapper">
                 <form action="{{ route('register.create') }}" method="POST" class="forms-sample mb-3">
                   @csrf
+                  <h3>Register</h3>
                   <div class="form-group row">
                     <label for="nim">NIM</label>
                     <input type="text" class="form-control" id="nim" name="nim" placeholder="Masukkan NIM">
